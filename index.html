@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #ffffff;
+            font-weight: bold;
+            
+        }
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 50px auto;
+        }
+        thead td:hover {
+            background-color: aqua;
+        }
+        thead td:first-child:hover {
+            background-color: royalblue;
+        }
+        th, td {
+            padding: 15px;
+          }
+        thead td {
+            background-color: #ffff00;
+            border: 1px solid;
+        }
+        thead td:first-of-type {
+            width: 10%;
+        }
+        section {
+            font-size: smaller;
+            position: relative;
+            
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            width: 5%;
+            height: 176%;
+            background-color: black;
+            transform: rotate(35deg);
+            left: 15px;
+            bottom: -24px;
+        }
+        .right {
+            display: block;
+            text-align: right;
+        }
+        .left {
+            display: block;
+            text-align: left;
+        }
+        tbody * {
+            text-align: center;
+            background-color: #fff2cc;
+            border: 1px solid;
+        }
+        #location , #location1 , #location2 , #location3 {
+            padding: 0 10px !important;
+            opacity: 0;
+            transition: 0.3s linear;
+        }
+        .location {
+            background-color: #ecafa0 ;
+            padding: 0 10px !important;
+        }
+        .location:hover {
+            background-color: royalblue;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+ <table> 
+     <caption style="border: 1px solid black; ">جدول الترم الاول - العام الدراسي 2021-2022</caption>
+     
+         <thead>
+            <tr>
+         <td><section>
+             <span class="left">Day</span>
+             <span class="line"></span>
+             <br>
+             <br>
+             <span class="right">Time</span>
+             
+         </section></td>
+         <td>9 -- 10</td>
+         <td>10 ‐‐ 11</td>
+         <td>11 ‐‐ 12</td>
+         <td>12 ‐‐ 13</td>
+         <td>13 -- 14</td>
+         <td>14 -- 15</td>
+         <td>15 -- 16</td>
+         <td>16 -- 17</td>
+         <td>17 -- 18</td>
+         <td>18 -- 19</td>
+         <td>19 -- 20</td>
+        </tr>
+        </thead>
+     <tbody>
+         <tr onclick="myFunction()">
+         <td>الاحد</td>
+         <td colspan="2">-----</td>
+         <td colspan="2">Math 5</td>
+         <td colspan="2">Measurements</td>
+         <td colspan="2">Measurements Section</td>
+         <td colspan="2">Algorith Section</td>
+        </tr>
+        <tr id="location">
+            <td class="location">Location</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">NP-306</td>
+            <td class="location" colspan="2">NP-304</td>
+            <td class="location" colspan="2">NP-303</td>
+            <td class="location" colspan="2">NP-302</td>
+           </tr>
+           <tr onclick="myFunction()">
+            <td>الإثنين</td>
+            <td colspan="2">Logic</td>
+            <td colspan="2">Fundamentals</td>
+            <td colspan="2">----</td>
+            <td colspan="2">Algorithm</td>
+            <td colspan="2">----</td>
+           </tr>
+           <tr id="location1">
+            <td class="location">Location</td>
+            <td class="location" colspan="2">NP-306</td>
+            <td class="location" colspan="2">NP-304</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">NP-302</td>
+            <td class="location" colspan="2"></td>
+           </tr>
+           <tr onclick="myFunction()">
+            <td>الاربعاء</td>
+            <td colspan="2">-----</td>
+            <td colspan="2">-----</td>
+            <td colspan="2">-----</td>
+            <td colspan="2">Fundamentals Section</td>
+            <td colspan="2">------</td>
+           </tr>
+           <tr id="location2">
+            <td class="location">Location</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">NP-304</td>
+            <td class="location" colspan="2">-----</td>
+           </tr>
+           <tr onclick="myFunction()">
+            <td>الخميس</td>
+            <td colspan="2">-----</td>
+            <td colspan="2">Logic Section</td>
+            <td colspan="2">Math 5 Section</td>
+            <td colspan="2">------</td>
+            <td colspan="2">------</td>
+           </tr>
+           <tr id="location3">
+            <td class="location">Location</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">NP-306</td>
+            <td class="location" colspan="2">NP-304</td>
+            <td class="location" colspan="2">-----</td>
+            <td class="location" colspan="2">-----</td>
+           </tr>
+     </tbody>
+ </table>
+ <script>
+    function myFunction() {
+      var x = document.getElementById("location");
+      var y = document.getElementById("location1");
+      var z = document.getElementById("location2");
+      var a = document.getElementById("location3");
+      if (x.style.opacity === "0" || y.style.opacity === "0" || z.style.opacity === "0" || a.style.opacity === "0" ) {
+        x.style.opacity = "1";
+        y.style.opacity = "1";
+        z.style.opacity = "1";
+        a.style.opacity = "1";
+      } else {
+        x.style.opacity = "0";
+        y.style.opacity = "0";
+        z.style.opacity = "0";
+        a.style.opacity = "0";
+      }
+    }
+    </script>
+</body>
+</html>
